@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "MarianMoodleMate",
+  "version": "1.0.0",
+  "description": "Floating Moodle helper with due-assignment visibility for Marian LMS.",
+  "permissions": [
+    "storage",
+    "notifications"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icon.png"],
+      "matches": [
+        "https://marianlms.in/*",
+        "https://*.marianlms.in/*"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://marianlms.in/*",
+        "https://*.marianlms.in/*"
+      ],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
